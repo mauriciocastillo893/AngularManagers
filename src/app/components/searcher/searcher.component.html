@@ -1,1 +1,10 @@
-<p>searcher works!</p>
+<div class="searcher-container">
+    <div class="text">
+        <input type="search" class="searcher" placeholder="Search By Name and Email" [(ngModel)]="searchValue"
+            (ngModelChange)="filterArrayByProperties()">
+    </div>
+    <div class="icon" (click)="eraseInfo()">
+        <img class="icon-image" [src]="searchValue.length > 0 ? 'assets/icons/close.svg' : 'assets/icons/search.svg'"
+            alt="search" />
+    </div>
+</div>

@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
-                <td>{{ user.name }}</td>
+                <td>{{ user.name | shortenName}}</td>
                 <td>{{ user.email || '-' }}</td>
                 <td>{{ user.company }}</td>
                 <td>{{ user.whatsapp }}</td>
