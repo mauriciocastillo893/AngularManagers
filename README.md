@@ -1,6 +1,15 @@
 # AngularManagers
 This project consists in create an interface to show and create all the managers required
 
-# Pasos
-1. Crear el proyecto con, le damos a todo "yes", y usaremos "CSS" para este proyecto. Y de igual forma no activamos el SSR en esta ocasión debido a que no estamos consumiendo alguna API o cierta información que queremos que se requiera usar SSR, pero este se puede volver a activar luego.
-<npx @angular/cli@18 new angular-managers>  
+# Steps to run the project:
+1. Download the repository
+`git clone https://github.com/mauriciocastillo893/AngularManagers`
+
+2. Make sure to be installed 'npx' to run the project or run the project with 18.2.12 CLI version and 20.11.0 version
+![This is the ng version I used for this project](public/assets/Angular CLI Version Project.png)
+
+3. Install node modules in the project
+`npm i`
+
+4. Run the project
+`npx ng serve` or `ng serve`
