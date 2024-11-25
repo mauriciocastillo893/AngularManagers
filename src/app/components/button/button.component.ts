@@ -13,18 +13,27 @@ import { Router } from '@angular/router';
 })
 export class ButtonComponent {
   @Input() dataButton: Button = { "description": "+" };
+  @Input() size: Size = {};
   @Input() navigateTo: string = ''
+  @Input() queryParams: any = {}
 
   constructor(private router: Router) { }
 
   navigate() {
-    if (this.navigateTo) this.router.navigate([this.navigateTo])
+    this.router.navigate([this.navigateTo], { queryParams: this.queryParams });
   }
 }
 
 export interface Button {
   description?: string;
   buttonType?: ButtonType;
+}
+
+export interface Size {
+  width?: string;
+  height?: string;
+  padding?: string;
+  margin?: string
 }
 
 export enum ButtonType {

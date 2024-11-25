@@ -1,4 +1,4 @@
-<div class="button" (click)="navigate()">
+<div class="button" (click)="navigate()" [ngStyle]="{width: size.width, height: size.height, padding: size.padding, margin: size.margin}">
     <div class="description">
         {{dataButton.description}}
     </div>

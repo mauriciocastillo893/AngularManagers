@@ -6,9 +6,11 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
-    max-width: 4rem;
+    height: 100%;
+    /* max-width: 4rem; */
     cursor: pointer;
     transition: all .3s ease;
+    user-select: none;
 }
 
 .button:hover{

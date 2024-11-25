@@ -1,13 +1,13 @@
-<div class="overflow-x-auto">
+<div class="table">
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Company</th>
-                <th>WhatsApp</th>
-                <th>Created At</th>
-                <th>Options</th>
+                <th><div class="headers">Name</div></th>
+                <th><div class="headers">Email</div></th>
+                <th><div class="headers">Company</div></th>
+                <th><div class="headers">WhatsApp</div></th>
+                <th><div class="headers">Created At</div></th>
+                <th><div class="headers">Options</div></th>
             </tr>
         </thead>
         <tbody>
@@ -18,10 +18,17 @@
                 <td>{{ user.whatsapp }}</td>
                 <td>{{ user.createdAt }}</td>
                 <td class="button">
-                    <app-button [dataButton]="{'buttonType': ButtonType['EDIT']}" [navigateTo]="'/manager-management?user=user'"></app-button>
-                    <app-button [dataButton]="{'buttonType': ButtonType['DELETE']}" [navigateTo]="'/manager-management?user=user'"></app-button>
-                    <!-- <button>Edit</button> -->
-                    <!-- <button>Delete</button> -->
+                    <app-button 
+                        [dataButton]="{'buttonType': ButtonType['EDIT']}"
+                        [navigateTo]="'/manager-management'" 
+                        [queryParams]="{ 
+                            user: (user | json | base64Encode) 
+                        }"
+                    >
+                    </app-button>
+                    <app-button [dataButton]="{'buttonType': ButtonType['DELETE']}"
+                        (click)="deleteUser(user.id)">
+                    </app-button>
                 </td>
             </tr>
         </tbody>

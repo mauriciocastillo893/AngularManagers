@@ -1,7 +1,13 @@
-<div>
+<div class="managers-list-container">
     <div class="title-container">
         <div class="title">MANAGERS</div>
-        <div>+Add</div>
+        <div class="button">
+            <app-button 
+                [dataButton]="{'description': '+Add'}" [size]="{'width': '160px', 'height': '1.75rem', 'margin': '-10px'}"
+                [navigateTo]="'/manager-management'"
+            >
+            </app-button>
+        </div>
     </div>
     <div class="searcher-container">Searcher</div>
     <div class="table">
