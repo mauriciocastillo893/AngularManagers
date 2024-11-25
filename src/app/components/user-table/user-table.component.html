@@ -1,0 +1,29 @@
+<div class="overflow-x-auto">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>WhatsApp</th>
+                <th>Created At</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email || '-' }}</td>
+                <td>{{ user.company }}</td>
+                <td>{{ user.whatsapp }}</td>
+                <td>{{ user.createdAt }}</td>
+                <td class="button">
+                    <app-button [dataButton]="{'buttonType': ButtonType['EDIT']}" [navigateTo]="'/manager-management?user=user'"></app-button>
+                    <app-button [dataButton]="{'buttonType': ButtonType['DELETE']}" [navigateTo]="'/manager-management?user=user'"></app-button>
+                    <!-- <button>Edit</button> -->
+                    <!-- <button>Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

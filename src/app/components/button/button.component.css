@@ -1,0 +1,30 @@
+.button{
+    border: white 1px solid;
+    border-radius: .25rem;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 4rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.button:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.description{
+    background: transparent;
+    width: auto;
+    height: auto;
+}
+
+.icon{
+    background: transparent;
+    width: auto;
+    height: auto;
+    display: grid;
+    place-content: center;
+}

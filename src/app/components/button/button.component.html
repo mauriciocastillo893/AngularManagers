@@ -1,1 +1,13 @@
-<p>button works!</p>
+<div class="button" (click)="navigate()">
+    <div class="description">
+        {{dataButton.description}}
+    </div>
+    <div class="icon" *ngIf="dataButton.buttonType">
+        <img 
+            src="{{dataButton.buttonType === 'edit' ? 'assets/icons/icon-edit.png' : 'assets/icons/icon-delete.png'}}" 
+            alt="icon"
+            width="15px"
+            height="15px"
+        />
+    </div>
+</div>
