@@ -12,7 +12,7 @@ export class UserService {
     { id: 1, name: 'Adarqui Francisco', email: 'adarqui@capitalblue.cl', company: 'Capital Blue SPA', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
     { id: 2, name: 'Francisco', email: 'adarqui@capitalblue.cl', company: 'Andres Pem', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
     { id: 3, name: 'Josue', email: 'josue@sociallit.cl', company: 'Capital Blue SPA', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
-    { id: 4, name: 'Alfonso', email: null, company: 'AC Management', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
+    { id: 4, name: 'Alfonso', email: 'alfonso@capgems.cl', company: 'AC Management', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
     { id: 5, name: 'Charly', email: 'adarqui@capitalblue.cl', company: 'RIFT TALENTOS', lada: '56', telephone: '9665491820', country: 'México', createdAt: '29/03/2022' },
   ]);
 

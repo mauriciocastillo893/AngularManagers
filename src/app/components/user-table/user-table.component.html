@@ -1,3 +1,5 @@
+<app-modal [title]="'Confirm Action'" [description]="'Are you sure you want to proceed?'" [isVisible]="activateModal"
+    (accept)="activateModal = false; deleteUser()" (cancel)="activateModal = false"></app-modal>
 <div class="table">
     <table>
         <thead>
@@ -27,7 +29,7 @@
                     >
                     </app-button>
                     <app-button [dataButton]="{'buttonType': ButtonType['DELETE']}"
-                        (click)="deleteUser(user.id!)">
+                        (click)="preConfirmDeleteUser(user.id!)">
                     </app-button>
                 </td>
             </tr>

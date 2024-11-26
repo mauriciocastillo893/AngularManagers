@@ -33,7 +33,7 @@ export class ManagerManagementPageComponent {
     this.route.queryParams.subscribe(params => {
       if (params['user']) {
         this.user = JSON.parse(JSON.parse(atob(params['user'])));
-        console.log('User:', this.user, typeof this.user);
+        // console.log('User:', this.user, typeof this.user);
         this.updateFieldMode = true;
         if (this.user) {
           this.currentInfoCard.forEach(card => {

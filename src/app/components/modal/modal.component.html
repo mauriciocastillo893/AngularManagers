@@ -1,0 +1,10 @@
+<div [ngClass]="{ 'modal-overlay': isVisible === true && isVisible != null, 'modal-overlay-off': isVisible === false && isVisible != null }">
+    <div class="modal">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+        <div class="modal-buttons">
+            <button class="modal-cancel" (click)="onCancel()">Cancel</button>
+            <button class="modal-accept" (click)="onAccept()">Accept</button>
+        </div>
+    </div>
+</div>
