@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
 export class ButtonComponent {
   @Input() dataButton: Button = { "description": "+" };
   @Input() size: Size = {};
-  @Input() navigateTo: string = ''
+  @Input() navigateTo: string | null = null
   @Input() queryParams: any = {}
 
   constructor(private router: Router) { }
 
   navigate() {
-    this.router.navigate([this.navigateTo], { queryParams: this.queryParams });
+    if(this.navigateTo != null) this.router.navigate([this.navigateTo], { queryParams: this.queryParams });
   }
 }
 

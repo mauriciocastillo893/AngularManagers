@@ -9,11 +9,11 @@ export class UserService {
   constructor() { }
 
   private usersSubject = new BehaviorSubject<User[]>([
-    { id: 1, name: 'Adarqui Francisco', email: 'adarqui@capitalblue.cl', company: 'Capital Blue SPA', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29-03-2022' },
-    { id: 2, name: 'Francisco', email: 'adarqui@capitalblue.cl', company: 'Andres Pem', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29-03-2022' },
-    { id: 3, name: 'Josue', email: 'josue@sociallit.cl', company: 'Capital Blue SPA', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29-03-2022' },
-    { id: 4, name: 'Alfonso', email: null, company: 'AC Management', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29-03-2022' },
-    { id: 5, name: 'Charly', email: 'adarqui@capitalblue.cl', company: 'RIFT TALENTOS', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29-03-2022' },
+    { id: 1, name: 'Adarqui Francisco', email: 'adarqui@capitalblue.cl', company: 'Capital Blue SPA', lada: '+56', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29/03/2022' },
+    { id: 2, name: 'Francisco', email: 'adarqui@capitalblue.cl', company: 'Andres Pem', lada: '+56', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29/03/2022' },
+    { id: 3, name: 'Josue', email: 'josue@sociallit.cl', company: 'Capital Blue SPA', lada: '+56', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29/03/2022' },
+    { id: 4, name: 'Alfonso', email: null, company: 'AC Management', lada: '+56', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29/03/2022' },
+    { id: 5, name: 'Charly', email: 'adarqui@capitalblue.cl', company: 'RIFT TALENTOS', lada: '+56', whatsapp: '+56 9 6654 9182', country: 'México', createdAt: '29/03/2022' },
   ]);
 
   private filteredUsersSubject = new BehaviorSubject<User[]>(this.usersSubject.value);
@@ -23,7 +23,7 @@ export class UserService {
 
   private getLastId(): number {
     const currentUsers = this.usersSubject.value;
-    return currentUsers.length ? Math.max(...currentUsers.map(user => user.id)) : 0;
+    return currentUsers.length ? Math.max(...currentUsers.map(user => user.id ?? 0)) : 0;
   }
 
   getUsers(): User[] {
@@ -63,11 +63,12 @@ export class UserService {
 
 
 export interface User {
-  id: number;
+  id?: number;
   name: string;
   email: string | null;
-  company: string;
+  company: string | null;
   whatsapp: string;
+  lada: string;
   country: string;
   createdAt: string;
 }

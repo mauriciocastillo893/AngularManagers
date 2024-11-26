@@ -11,6 +11,7 @@
     cursor: pointer;
     transition: all .3s ease;
     user-select: none;
+    color: white;
 }
 
 .button:hover{

@@ -1,1 +1,12 @@
-<p>manager-management-page works!</p>
+<div class="manager-management-container">
+    <div class="title">
+        <p>MANAGER</p>
+        <p>INFORMATION</p>
+    </div>
+    <div class="card-container">
+        <app-input-card [currentInfoCard]="currentInfoCard" [saveChanges]="isChangesApplied" (resultOfInfoCard)="saveChanges($event)"></app-input-card>
+    </div>
+    <div class="button">
+        <app-button [dataButton]="{'description': 'Save'}" [size]="{'padding': '.4rem 2.5rem'}" (click)="saveManagerInfo()"></app-button>
+    </div>
+</div>

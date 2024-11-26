@@ -1,1 +1,47 @@
-<p>input-card works!</p>
+<div class="card-container">
+    @for (item of currentInfoCard.length > 0 ? currentInfoCard : defaultInfoCard; track $index) {
+    <div class="input-card-container" [ngStyle]="{'height': item.messageError ? '5.75rem' : '3.75rem'}">
+        <div class="title">
+            <img src="assets/icons/icon-attribute.png" alt="attribute" width="16px" height="16px">
+            <p>{{item.title}}</p>
+        </div>
+        <div class="input-container" *ngIf="item.inputType === InputType.PHONE">
+            <div class="phone-code">
+                <input
+                    class="input-phone" 
+                    type="number" 
+                    placeholder="+52"
+                    [(ngModel)]="item.lada"
+                    (input)="clearError(item)"
+                    (keydown)="preventInvalidInput($event)" 
+                />
+            </div>
+            <div class="phone-number">
+                <input 
+                type="number" 
+                class="input-phone" 
+                [(ngModel)]="item.currentValue" 
+                [pattern]="getPattern(item.inputType)" 
+                (input)="clearError(item)"
+                (keydown)="preventInvalidInput($event)" 
+                [placeholder]="item.placeholder || 'Phone Number'"
+                required 
+                />
+            </div>
+        </div>
+        <div *ngIf="item.inputType !== InputType.PHONE" class="input-container">
+            <input 
+                type="{{ item.inputType }}" 
+                [(ngModel)]="item.currentValue" 
+                [pattern]="getPattern(item.inputType)" 
+                (input)="clearError(item)" 
+                [placeholder]="item.placeholder || ''" 
+                required 
+            />
+        </div>
+        <div *ngIf="item.messageError" class="error-message">
+            <p>{{ item.messageError }}</p>
+        </div>
+    </div>
+    }
+</div>
