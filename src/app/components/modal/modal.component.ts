@@ -13,7 +13,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ModalComponent {
   @Input() title: string = 'Default Title';
   @Input() description: string = 'Default Description';
-  @Input() isVisible: boolean = false;
+  @Input() isVisible: boolean | null = false;
   @Output() accept = new EventEmitter<void>();
   @Output() cancel = new EventEmitter<void>();
 

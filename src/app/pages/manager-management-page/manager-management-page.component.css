@@ -26,12 +26,36 @@
 }
 
 .card-container{
-    padding: 0 1rem;
+    padding: 0 10rem;
 }
 
 .button{
-    margin: 2rem 2rem 2rem 0;
+    margin: 2rem 10rem 2rem 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .card-container{
+        padding: 0 2rem;
+    }
+
+    .button{
+        margin: 2rem 2rem 2rem 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .card-container{
+        padding: 0 1rem;
+    }
+
+    .button{
+        margin: 2rem 1rem 2rem 0;
+    }
 }

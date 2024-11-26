@@ -25,7 +25,7 @@ export class UserTableComponent {
   users: User[] = [];
   ButtonType = ButtonType;
   tempUserId!: number;
-  activateModal: boolean = false;
+  activateModal: boolean | null = null;
 
   constructor(private userService: UserService) {}
 

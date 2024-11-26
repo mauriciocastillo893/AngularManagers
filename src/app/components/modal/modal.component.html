@@ -1,4 +1,4 @@
-<div [ngClass]="{ 'modal-overlay': isVisible === true && isVisible != null, 'modal-overlay-off': isVisible === false && isVisible != null }">
+<div [ngClass]="{ 'default-value': isVisible === null, 'modal-overlay': isVisible === true && isVisible != null, 'modal-overlay-off': isVisible === false && isVisible != null }">
     <div class="modal">
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>

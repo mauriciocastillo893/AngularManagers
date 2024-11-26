@@ -1,4 +1,4 @@
-<app-modal [title]="'Confirm Action'" [description]="'Are you sure you want to proceed?'" [isVisible]="activateModal"
+<app-modal [title]="'Confirm Action'" [description]="'This action is irreversible. Are you sure you want to proceed?'" [isVisible]="activateModal"
     (accept)="activateModal = false; deleteUser()" (cancel)="activateModal = false"></app-modal>
 <div class="table">
     <table>

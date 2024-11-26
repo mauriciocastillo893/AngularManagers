@@ -22,11 +22,11 @@
     gap: 0.25rem;
 }
 
-.title > p {
+.title>p {
     font-weight: 500;
 }
 
-.input-container{
+.input-container {
     width: 100%;
     height: 2rem;
     border-radius: 2.5px;
@@ -34,7 +34,7 @@
     justify-content: space-between;
 }
 
-.input-container > input {
+.input-container>input {
     width: 100%;
     height: 100%;
     border: none;
@@ -47,7 +47,7 @@
 }
 
 .input-phone::-webkit-inner-spin-button,
-.input-phone::-webkit-outer-spin-button{
+.input-phone::-webkit-outer-spin-button {
     appearance: none;
 }
 
@@ -82,13 +82,24 @@
     box-sizing: border-box;
 }
 
-.error-message{
+.error-message {
     height: 1rem;
     background-color: red;
     color: rgb(136, 0, 0);
     font-size: .75rem;
     padding: .5rem 1rem;
+    line-height: .9;
     margin-inline: -.7rem;
     margin-top: .75rem;
     border-radius: 0 0 7.5px 7.5px;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 375px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
 }
