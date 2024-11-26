@@ -13,9 +13,10 @@ import { ButtonComponent } from "../../components/button/button.component";
 })
 export class ManagerManagementPageComponent {
   user: User | null = null;
+  updateFieldMode: boolean = false;
   isChangesApplied: boolean | null = null;
   currentInfoCard: InfoCard[] = [
-    { title: 'Company', inputType: InputType.TEXT, placeholder: "My Company" },
+    { title: 'Company', inputType: InputType.TEXT, placeholder: "My Company"},
     { title: 'Name', inputType: InputType.TEXT, placeholder: "-" },
     { title: 'Country', inputType: InputType.TEXT, placeholder: "México", required: false },
     { title: 'Telephone', inputType: InputType.PHONE, placeholder: "123456789" },
@@ -33,6 +34,17 @@ export class ManagerManagementPageComponent {
       if (params['user']) {
         this.user = JSON.parse(JSON.parse(atob(params['user'])));
         console.log('User:', this.user, typeof this.user);
+        this.updateFieldMode = true;
+        if (this.user) {
+          this.currentInfoCard.forEach(card => {
+            const key = card.title.toLowerCase()
+            if (this.user && key in this.user) {
+              console.log('Key:', key, 'Value:', (this.user as any)[key]);
+              card.currentValue = (this.user as any)[key];
+              card.lada = this.user.lada;
+            }
+          });
+        }
       }
     });
   }
@@ -42,7 +54,8 @@ export class ManagerManagementPageComponent {
   }
 
   saveChanges(user: User): void {
-    this.userService.addUser(user);
+    if(!this.updateFieldMode) this.userService.addUser(user);
+    else this.userService.updateUser({...user, id: this.user?.id!});
     this.mainRouter.navigate(["/"])
   }
 }

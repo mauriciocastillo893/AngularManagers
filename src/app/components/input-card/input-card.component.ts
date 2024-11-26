@@ -89,7 +89,7 @@ export class InputCardComponent {
         company: this.currentInfoCard[0].currentValue || '',
         name: this.currentInfoCard[1].currentValue || '',
         country: this.currentInfoCard[2].currentValue || '',
-        whatsapp: this.currentInfoCard[3].currentValue || '',
+        telephone: this.currentInfoCard[3].currentValue || '',
         lada: this.currentInfoCard[3].lada || '',
         email: this.currentInfoCard[4].currentValue || '',
         createdAt: new Date().toLocaleDateString(),

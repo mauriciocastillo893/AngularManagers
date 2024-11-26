@@ -15,7 +15,7 @@
                 <td>{{ user.name | shortenName}}</td>
                 <td>{{ user.email || '-' }}</td>
                 <td>{{ user.company }}</td>
-                <td>{{ user.whatsapp }}</td>
+                <td>+{{ user.lada }} {{ user.telephone | phoneFormat}}</td>
                 <td>{{ user.createdAt }}</td>
                 <td class="button">
                     <app-button 
@@ -27,7 +27,7 @@
                     >
                     </app-button>
                     <app-button [dataButton]="{'buttonType': ButtonType['DELETE']}"
-                        (click)="deleteUser(user.id)">
+                        (click)="deleteUser(user.id!)">
                     </app-button>
                 </td>
             </tr>

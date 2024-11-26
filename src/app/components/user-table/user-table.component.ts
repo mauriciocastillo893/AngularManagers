@@ -4,6 +4,7 @@ import { ButtonComponent, ButtonType } from "../button/button.component";
 import { User, UserService } from '../../services/user-service/user.service';
 import { Base64EncodePipe } from '../../pipes/base64-encode/base64-encode.pipe';
 import { ShortenNamePipe } from '../../pipes/shorten-name/shorten-name.pipe';
+import { PhoneFormatPipe } from '../../pipes/phone-format/phone-format.pipe';
 
 @Component({
   selector: 'app-user-table',
@@ -13,6 +14,7 @@ import { ShortenNamePipe } from '../../pipes/shorten-name/shorten-name.pipe';
     ButtonComponent,
     Base64EncodePipe,
     ShortenNamePipe,
+    PhoneFormatPipe,
 ],
   templateUrl: './user-table.component.html',
   styleUrl: './user-table.component.css'
